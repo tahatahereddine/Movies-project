@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/signup.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>S'enregistrer</title>
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="process.php">
+          <input type="text" placeholder="Nom" required />
+          <input type="text" placeholder="Prénom" required />
+          <input type="text" placeholder="Adresse Email" required />
+          <input type="password" placeholder="Mot de passe" required />
+          <input type="password" placeholder="Retaper mot de passe" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">J'accepte les termes et les conditions</label>
+          </div>
+          <input type="submit" id="sign-up-button" value="S'inscrire" />
+        </form>
+      </div>
+
+      <div class="form login">
+        <header>Login</header>
+        <br><br>
+        <form action="process.php">
+          <input type="text" placeholder="Adresse Email" required />
+          <input type="password" placeholder="Mot de passe" required />
+          <input type="submit" id="login-in-button" value="Se connecter" />
+        </form>
+      </div>
+
+      <script>
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup header"),
+          loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
+      </script>
+    </section>
+  </body>
+</html>
