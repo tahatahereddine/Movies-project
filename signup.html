@@ -11,27 +11,28 @@
     <section class="wrapper">
       <div class="form signup">
         <header>Signup</header>
-        <form action="process.php">
-          <input type="text" placeholder="Nom" required />
-          <input type="text" placeholder="Prénom" required />
-          <input type="text" placeholder="Adresse Email" required />
-          <input type="password" placeholder="Mot de passe" required />
-          <input type="password" placeholder="Retaper mot de passe" required />
+        <form action="process.php" method="POST">
+          <input type="text" name="nom" placeholder="Nom" required />
+          <input type="text" name="prenom" placeholder="Prénom" required />
+          <input type="email" name="email" placeholder="Adresse Email" required />
+          <input type="password" name="password" placeholder="Mot de passe" required />
+          <input type="password" name="confirm_password" placeholder="Retaper mot de passe" required />
+          <input type="date" name="date_naiss" placeholder="Date de naissance" required />
           <div class="checkbox">
-            <input type="checkbox" id="signupCheck" />
+            <input type="checkbox" id="signupCheck" required />
             <label for="signupCheck">J'accepte les termes et les conditions</label>
           </div>
-          <input type="submit" id="sign-up-button" value="S'inscrire" />
+          <input type="submit" name="signup" id="sign-up-button" value="S'inscrire" />
         </form>
       </div>
 
       <div class="form login">
         <header>Login</header>
         <br><br>
-        <form action="process.php">
-          <input type="text" placeholder="Adresse Email" required />
-          <input type="password" placeholder="Mot de passe" required />
-          <input type="submit" id="login-in-button" value="Se connecter" />
+        <form action="process.php" method="POST">
+          <input type="email" name="email" placeholder="Adresse Email" required />
+          <input type="password" name="password" placeholder="Mot de passe" required />
+          <input type="submit" name="signin" id="login-in-button" value="Se connecter" />
         </form>
       </div>
 

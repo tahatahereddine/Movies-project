@@ -9,7 +9,9 @@ if (isset($_POST['signup'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
+    $date_naiss = $_POST['date_naiss'];
 
+    // Validate passwords
     if ($password !== $confirm_password) {
         echo "Passwords do not match.";
         exit;
@@ -30,13 +32,15 @@ if (isset($_POST['signup'])) {
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
     // Insert user into database
-    $stmt = $conn->prepare("INSERT INTO UTILISATEUR (Nom_User, Prenom_User, Date_naiss, Email_User, mdp_User) VALUES (?, ?, NOW(), ?, ?)");
-    $stmt->bind_param("ssss", $nom, $prenom, $email, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO UTILISATEUR (Nom_User, Prenom_User, Date_naiss, Email_User, mdp_User) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $nom, $prenom, $date_naiss, $email, $hashed_password);
 
     if ($stmt->execute()) {
         $_SESSION['user_id'] = $stmt->insert_id;
+        $_SESSION['loggedin'] = true;
+        $_SESSION['prenom'] = $prenom;
         header("Location: index.php");
-        exit;
+        exit();
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -55,8 +59,10 @@ if (isset($_POST['signin'])) {
 
     if ($user && password_verify($password, $user['mdp_User'])) {
         $_SESSION['user_id'] = $user['ID_User'];
+        $_SESSION['loggedin'] = true;
+        $_SESSION['prenom'] = $user['Prenom_User'];
         header("Location: index.php");
-        exit;
+        exit();
     } else {
         echo "Invalid email or password.";
     }

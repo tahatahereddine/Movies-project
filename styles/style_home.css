@@ -1,0 +1,99 @@
+.dark .bg-dark, .dark .bg-white, .dark .card, .dark .section {
+    background: #202124 !important;
+    color: #bdc1c6;
+}
+.section {
+    padding: 70px 0;
+    position: relative;
+    background-color: #fff;
+}
+
+section-dark, .section-gold, .section-image {
+    position: relative;
+}
+
+.section-dark {
+    background-color: #151f20;
+}
+.section-dark, .section-gold, .section-image {
+    position: relative;
+}
+.section-dark {
+    background-color: #151f20;
+}
+
+.container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.input-group-append {
+    margin-left: -1px;
+}
+
+.input-group-append, .input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+button{
+    appearance: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+    font-weight: 400;
+}
+
+.search{
+    background-color: rgb(251, 255, 132) !important;
+    border-color: black !important;
+    color: black !important;
+}
+
+.sp-poster {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+}
+
+.section-dark{
+    background-image: url('images/bground.jpg') !important; /* Path to your image */
+    background-size: cover !important; /* Cover the entire div */
+    background-position: center !important; /* Center the image */
+    background-repeat: no-repeat !important; /* Do not repeat the image */
+    
+}
+
+.nom{
+    color: #f0f0f0 !important;
+}
