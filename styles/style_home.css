@@ -94,6 +94,14 @@ button{
     
 }
 
-.nom{
+.section-dark .nom{
     color: #f0f0f0 !important;
+}
+
+.section-dark .titre{
+    color: #f0f0f0;
+}
+
+.titre{
+    color: black;
 }

@@ -11,12 +11,11 @@
     <section class="wrapper">
       <div class="form signup">
         <header>Signup</header>
-        <form action="process.php" method="POST">
+        <form action="process.php" method="post">
           <input type="text" name="nom" placeholder="Nom" required />
           <input type="text" name="prenom" placeholder="Prénom" required />
           <input type="email" name="email" placeholder="Adresse Email" required />
           <input type="password" name="password" placeholder="Mot de passe" required />
-          <input type="password" name="confirm_password" placeholder="Retaper mot de passe" required />
           <input type="date" name="date_naiss" placeholder="Date de naissance" required />
           <div class="checkbox">
             <input type="checkbox" id="signupCheck" required />
@@ -29,7 +28,7 @@
       <div class="form login">
         <header>Login</header>
         <br><br>
-        <form action="process.php" method="POST">
+        <form action="process.php" method="post">
           <input type="email" name="email" placeholder="Adresse Email" required />
           <input type="password" name="password" placeholder="Mot de passe" required />
           <input type="submit" name="signin" id="login-in-button" value="Se connecter" />

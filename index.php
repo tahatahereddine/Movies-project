@@ -1,38 +1,9 @@
 <?php
+  include 'functions.php';
   include 'db.php';
+  include 'header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/style_home.css">
-    <link rel="stylesheet" href="styles/bootstrap.css">
-    <script src="js/bootstrap.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <title>MoviFlix</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <a href="#" class="logo">MovieFlix</a>
-
-      <nav class="navbar">
-        <a href="#"">Acceuil</a>
-        <a href="#">Genre</a>
-        <a href="#">Top IMdB</a>
-        <a href="#">Pays</a>
-        <a href="#">About</a>
-      </nav>
-      <?php
-        if(isset($_SESSION['loggedin']))
-        echo "<a href='signup.html' id='sign-up'>".$_SESSION['prenom']."</a>";
-        else
-          echo "<a href='signup.html' id='sign-up'>S'enregistrer </a>";
-      ?>
-      
-    </header>
     <div class="section">
         <div class="section-dark" style="background-image: url('bground.jpg') !important; background-position: center; background-size: cover;">
             <div class="container py-sm-5 mb-sm-5">
@@ -45,21 +16,23 @@
                         <div class="mx-auto">
                             <div>
                               <div class="autocomplete auto-start">
-                                <div class="input-group">
-                                  <input type="text" placeholder="Trouver un film" autocomplete="off" class="form-control">
-                                  <ul id="autocomplete-results" class="autocomplete-results" style="display: none;"></ul>
-                                  <div class="input-group-append">
-                                    <button type="submit" class="btn btn-danger search">
-                                      rechercher
-                                    </button>
+                                <form action="chercher.php" method="POST">
+                                  <div class="input-group">
+                                    <input type="text" name="film" placeholder="Trouver un film" autocomplete="off" class="form-control">
+                                    <ul id="autocomplete-results" class="autocomplete-results" style="display: none;"></ul>
+                                    <div class="input-group-append">
+                                      <button type="submit" class="btn btn-danger search">
+                                        rechercher
+                                      </button>
+                                    </div>
                                   </div>
-                                </div>
+                                </form>
                               </div>
                             </div>
                       </div>
                     </div>
                     <div class="col-12 text-center">
-                        <h2 class="h4 mt-5 text-light">The original MoviePosterDB</h2>
+                        <h2 class="h4 mt-5 text-light">Votre interface au cinema</h2>
                     </div>
                 </div>
             </div>
@@ -68,21 +41,13 @@
 
               <div class="row">
                 <div class="col-12">
-                    <h3 class="font-weight-bold text-uppercase text-light">Classement top 12</h3>
+                    <h3 class="font-weight-bold text-uppercase text-light titre">Classement top 12</h3>
                 </div>
               </div>
 
               <div class="row justify-content-center">
                   <?php
-                   function afficher_film($id, $nom){
-                      echo '<div class="col-6 col-sm-4 md-3 col-lg-2 mt-3">';
-                      echo '<a href="#">';
-                      echo '<div class="image-container">';
-                      echo '<img src="./images/'.$id.'.jpg" alt="'.$nom.'">';
-                      echo '</div>
-                          <div class="sp-poster-title" style="color=#f0f0f0;"><span class="nom">'.$nom.'</span></div>
-                          </a></div>';
-                   }
+                   
 
                    $sql = "SELECT * FROM film ORDER BY Rating DESC LIMIT 12;";
                    $resultat = mysqli_query($conn, $sql);
