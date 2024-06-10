@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'db.php';
 include 'functions.php';
 
@@ -25,20 +24,6 @@ if (isset($_POST['signin'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT * FROM UTILISATEUR WHERE Email_User = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-
-    if ($user && password_verify($password, $user['mdp_User'])) {
-        $_SESSION['user_id'] = $user['ID_User'];
-        $_SESSION['loggedin'] = true;
-        $_SESSION['prenom'] = $user['Prenom_User'];
-        header("location: index.php");
-        exit();
-    } else {
-        echo "Invalid email or password.";
-    }
+    connecterUtilisateur($conn, $email, $password);
 }
 ?>

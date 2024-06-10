@@ -17,7 +17,8 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 90px;
+    padding: 11px 90px;
+    padding-right: 20px;
     background: rgb(251, 255, 132);
     display: flex;
     justify-content: space-between;
@@ -56,7 +57,7 @@ body{
     width: 100%;
 }
 
-#sign-up{
+#sign-up, #profile, #deconnecter {
     border: 1px solid black;
     color: rgb(251, 255, 132);
     background-color:black;
@@ -64,6 +65,16 @@ body{
     text-decoration: none;
     border-radius: 3px;
     transition: 0.15s;
+}
+
+#profile {
+    margin-left: 30px;
+    padding: 6px 10px;
+}
+
+#deconnecter {
+    background-color: rgb(228, 75, 75) !important;
+    color: white;
 }
 #sign-up:hover{
     background-color: #686D76;
@@ -77,6 +88,7 @@ a:active{
 a:visited{
     color:black
 }
+
 
 body, html {
     margin: 0;
@@ -137,4 +149,35 @@ body, html {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover; /* Ensure the image covers the container */
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(229, 231, 161);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #969696;
+  }
+
+  .user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-options a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #fff;
 }

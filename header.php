@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,6 +11,7 @@
     <link rel="stylesheet" href="styles/bootstrap.css">
     <script src="js/bootstrap.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <title>MoviFlix</title>
   </head>
 
@@ -22,13 +26,17 @@
         <a href="#">Pays</a>
         <a href="#">About</a>
       </nav>
-      <?php
-        if(isset($_SESSION['loggedin'])){
-            echo "<a href='profile.php' id='sign-up'>".$_SESSION['prenom']."</a>";
-        }else{
-            echo "<a href='signup.php' id='sign-up'>S'enregistrer </a>";
-        }
-            
-      ?>
+
+      <div class="user-options">
+        <?php
+          if(isset($_SESSION['id'])){
+              echo "<a href='profile.php' id='profile'>".$_SESSION['prenom']."</a>";
+              echo "<a href='deconnecter.php' id='deconnecter'>Se deconnecter</a>";
+          }else{
+              echo "<a href='signup.php' id='sign-up'>S'enregistrer </a>";
+          }
+              
+        ?>
+      </div>
       
     </header>

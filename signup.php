@@ -14,8 +14,8 @@
         <form action="process.php" method="post">
           <input type="text" name="nom" placeholder="Nom" required />
           <input type="text" name="prenom" placeholder="Prénom" required />
-          <input type="email" name="email" placeholder="Adresse Email" required />
-          <input type="password" name="password" placeholder="Mot de passe" required />
+          <input type="email" name="email" placeholder="Adresse Email" autocomplete="false" required />
+          <input type="password" name="password" placeholder="Mot de passe" autocomplete="false" required />
           <input type="date" name="date_naiss" placeholder="Date de naissance" required />
           <div class="checkbox">
             <input type="checkbox" id="signupCheck" required />

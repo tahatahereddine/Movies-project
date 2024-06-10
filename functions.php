@@ -42,17 +42,39 @@ function creerUtilisateur($conn, $nom, $prenom, $date_naiss, $email, $mdp){
         header("location: signup.php?error=stmtfailed");
         exit();
     }
-    $hashedPwd = password_hash($mdp, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $nom, $prenom, $date_naiss, $email, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "sssss", $nom, $prenom, $date_naiss, $email, $mdp);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    // $_SESSION['user_id'] = $stmt->insert_id;
-    $_SESSION['loggedin'] = true;
+
+    session_start();
+    $_SESSION['id'] = mysqli_insert_id($conn);;
     $_SESSION['prenom'] = $prenom;
-    $_SESSION['email'] = $email;
     header("location: index.php");
     exit();
 }
 
+function connecterUtilisateur($conn, $email, $mdp){
+    $existe = utilisateurExiste($conn, $email);
+
+    if($existe === false){
+        header("location: signup.php?error=nexistepas");
+        exit();
+    }
+
+    $pwd = $existe['mdp_User'];
+    $verfierMdp = strcmp($mdp, $pwd);
+
+    if($verfierMdp != 0){
+        header("location: signup.php?error=mdpfalse");
+        exit();
+    }else if($verfierMdp == 0) {
+        session_start();
+        $_SESSION['id'] = $existe['ID_User'];
+        $_SESSION['prenom'] = $existe['Prenom_User'];
+        header("location: index.php");
+        exit();
+    }
+    
+}
 ?>
