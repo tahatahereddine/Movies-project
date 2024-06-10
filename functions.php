@@ -2,7 +2,7 @@
 
 function afficher_film($id, $nom){
     echo '<div class="col-6 col-sm-4 md-3 col-lg-2 mt-3">';
-    echo '<a href="#">';
+    echo '<a href="moreinfo.php?id='.$id.'">';
     echo '<div class="image-container">';
     echo '<img src="./images/'.$id.'.jpg" alt="'.$nom.'">';
     echo '</div>

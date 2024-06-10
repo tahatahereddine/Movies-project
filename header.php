@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style_home.css">
     <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
     <script src="js/bootstrap.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -17,14 +18,14 @@
 
   <body>
     <header class="header">
-      <a href="#" class="logo">MovieFlix</a>
+      <a href="index.php" class="logo">MovieFlix</a>
 
       <nav class="navbar">
         <a href="index.php"">Acceuil</a>
-        <a href="#">Genre</a>
-        <a href="#">Top IMdB</a>
-        <a href="#">Pays</a>
-        <a href="#">About</a>
+        <a href="filtrer.php?critere=genre">Genre</a>
+        <a href="filtrer.php?critere=genre">Top IMdB</a>
+        <a href="filtrer.php?critere=genre">Pays</a>
+        <a href="filtrer.php?critere=genre">About</a>
       </nav>
 
       <div class="user-options">
