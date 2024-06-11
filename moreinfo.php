@@ -53,8 +53,8 @@ $realisateur = getRealisateur($conn, $film['ID_Realisateur']);
                 <p><strong>Production: </strong><?=$production?></p>
             </div>
         </div>
-        <div class="columns">
+        <!-- <div class="columns">
             <p><strong>Acteurs: </strong><?="NULL"?></p>
-        </div>
+        </div> -->
     </div>
 
