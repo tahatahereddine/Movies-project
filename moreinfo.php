@@ -45,7 +45,7 @@ $realisateur = getRealisateur($conn, $film['ID_Realisateur']);
             <div class="column">
                 <p><strong>Date: </strong><?=$annee?></p>
                 <p><strong>Genre: </strong><?=$genre?></p>
-                <p><strong>realisateur: </strong><?=$realisateur?></p>
+                <p><strong>Réalisateur: </strong><?=$realisateur?></p>
             </div>
             <div class="column">
                 <p><strong>Duration: </strong><?=$duration?></p>

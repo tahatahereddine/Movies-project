@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 11, 2024 at 04:37 AM
+-- Generation Time: Jun 11, 2024 at 11:26 AM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.18
 
@@ -55,8 +55,8 @@ CREATE TABLE IF NOT EXISTS `aimer` (
 
 INSERT INTO `aimer` (`ID_User`, `ID_Film`) VALUES
 (2, 1),
-(2, 3),
 (2, 4),
+(2, 8),
 (2, 10),
 (2, 21),
 (2, 23),
@@ -65,7 +65,8 @@ INSERT INTO `aimer` (`ID_User`, `ID_Film`) VALUES
 (3, 6),
 (3, 8),
 (3, 10),
-(3, 11);
+(3, 11),
+(4, 10);
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `film` (
   `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`ID_Film`),
   KEY `ID_Realisateur` (`ID_Realisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `film`
@@ -116,7 +117,8 @@ INSERT INTO `film` (`ID_Film`, `Nom_film`, `Annee_film`, `Genre`, `Rating`, `Pay
 (20, 'The Good, the Bad and the Ugly', '1966', 'Western', 8.8, 'USA', 'United Artists', 16, 161, 'While the Civil War rages between the Confederacy and the Union, three men -- a callous hit man, a silent loner and a bandit -- reunite that the American Southwest looking for a strongbox containing $200,000 in stone.'),
 (21, 'The Lighthouse', '2019', 'Drama', 7.4, 'USA', 'RT Features', 17, 110, 'The hallucinatory and hypnotic story of 2 lighthouse keepers on a remote and mystical New England island at the 1890s.'),
 (22, 'Taxi Driver', '1976', 'Crime', 8.2, 'USA', ' Columbia Pictures', 18, 114, 'A mentally unstable Vietnam War veteran works as a night time taxi driver in New York City where the perceived decadence and sleaze feeds his urge for action, attempting to save a prostitute .'),
-(23, 'The GodFather', '1972', 'Crime', 9.2, 'USA', 'Paramount', 19, 175, 'Spanning the years 1945 to 1955, a chronicle of this literary Corleone crime family that is Italian-American. Vito Corleone survives an attempt on his own life, his youngest child, when crime family patriarch, Michael steps in to care for the prospective ');
+(23, 'The GodFather', '1972', 'Crime', 9.2, 'USA', 'Paramount', 19, 175, 'Spanning the years 1945 to 1955, a chronicle of this literary Corleone crime family that is Italian-American. Vito Corleone survives an attempt on his own life, his youngest child, when crime family patriarch, Michael steps in to care for the prospective '),
+(24, 'Intouchables', '2011', 'Drama', 8.5, 'France', 'Gaumont', 20, 113, 'A la suite d’un accident de parapente, Philippe, riche aristocrate, engage comme aide à domicile Driss, un jeune de banlieue tout juste sorti de prison. Bref la personne la moins adaptée pour le job. Ensemble ils vont faire cohabiter Vivaldi et Earth Wind');
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   `Nom_Realisateur` varchar(255) NOT NULL,
   `Prenom_Realisateur` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Realisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `realisateur`
@@ -170,7 +172,8 @@ INSERT INTO `realisateur` (`ID_Realisateur`, `Nom_Realisateur`, `Prenom_Realisat
 (16, 'Leone', 'Sergio'),
 (17, 'Robert', 'Eggers'),
 (18, 'Martin', 'Scorsese'),
-(19, 'Mitchell Rubin', 'Peter');
+(19, 'Mitchell Rubin', 'Peter'),
+(20, 'Nakache', 'Olivier');
 
 -- --------------------------------------------------------
 
@@ -187,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `Email_User` varchar(255) NOT NULL,
   `mdp_User` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_User`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `utilisateur`
@@ -195,8 +198,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`ID_User`, `Nom_User`, `Prenom_User`, `Date_naiss`, `Email_User`, `mdp_User`) VALUES
 (1, 'Jamali', 'Hassan', '0000-00-00', 'hassan.jamali@gmail.com', '1234'),
-(2, 'Tahereddine', 'Tahereddine', '2002-04-28', 'tahereddine2002@gmail.com', '1234'),
-(3, 'Salah', 'Ibrahim', '2003-04-04', 'salah.ibrahim@gmail.com', '1234');
+(2, 'Tahereddine', 'Taha', '2002-04-28', 'tahereddine2002@gmail.com', '1235'),
+(3, 'Salah', 'Ibrahim', '2003-04-04', 'salah.ibrahim@gmail.com', '1234'),
+(4, 'Kamal', 'Kamal', '2003-03-02', 'kamal2002@gmail.com', '1234');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
