@@ -23,7 +23,7 @@
       <nav class="navbar">
         <a href="index.php"">Acceuil</a>
         <a href="filtrer.php?critere=genre">Genre</a>
-        <a href="filtrer.php?critere=genre">Top IMdB</a>
+        <a href="filtrer.php?critere=top">Top IMdB</a>
         <a href="filtrer.php?critere=genre">Pays</a>
         <a href="filtrer.php?critere=genre">About</a>
       </nav>

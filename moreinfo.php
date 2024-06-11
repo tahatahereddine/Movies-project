@@ -33,7 +33,7 @@ $realisateur = getRealisateur($conn, $film['ID_Realisateur']);
                     if(estfavoris($conn, $id, $_SESSION['id']) === false){
                         echo '<a href="ajouterfav.php?id='.$id.'&uid='.$_SESSION['id'].'" class="favorite-button">Ajouter aux favoris</a>';
                     }else{
-                        echo '<a href="#" class="favorite-button-fav">favoris</a>';
+                        echo '<a class="favorite-button-fav">favoris</a>';
                     }
             }
                 ?></h1>
