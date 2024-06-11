@@ -29,13 +29,13 @@ $realisateur = getRealisateur($conn, $film['ID_Realisateur']);
             <img src=<?="images/".$id.".jpg"?> alt="Movie Image" class="movie-image">
             <div class="movie-info">
                 <h1 class="movie-title"><?=$nomFilm?>
-            <?php if(isset($_SESSION['id'])){
+                <?php if(isset($_SESSION['id'])){
                     if(estfavoris($conn, $id, $_SESSION['id']) === false){
                         echo '<a href="ajouterfav.php?id='.$id.'&uid='.$_SESSION['id'].'" class="favorite-button">Ajouter aux favoris</a>';
                     }else{
-                        echo '<a class="favorite-button-fav">favoris</a>';
+                        echo '<a href="supprimerfav.php?id='.$id.'&uid='.$_SESSION['id'].'" class="favorite-button-fav">favoris</a>';
                     }
-            }
+                }
                 ?></h1>
                 <p class="imdb-rating">IMDB Rating: <span style='color:orange;'><?=$rating?></span></p>
                 <p class="description"><?=$description?></p>
