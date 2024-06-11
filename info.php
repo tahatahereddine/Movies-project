@@ -58,7 +58,5 @@ function estfavoris($conn, $id, $uid){
     } else {
         return false;
     }
-
-    mysqli_stmt_close($stmt);
 }
 ?>

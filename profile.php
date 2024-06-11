@@ -85,6 +85,7 @@ include 'header.php';
                         <div class="mt-4">
                         </div> 
                         <button name='confirmer' class="btn btn-lg btn-focus confirmer">Confirmer</button>
+                        <a href="profile-fav.php" class="btn btn-lg btn-focus confirmer consulter">Consulter les favoris</a>
                     </div>
                 </div>
             </div>
