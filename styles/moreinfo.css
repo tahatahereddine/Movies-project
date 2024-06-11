@@ -100,3 +100,24 @@ body {
     
 }
 
+.confirmer{
+    background-color: rgb(229, 231, 161);
+    color: black;
+    margin-left: 40px !important;
+}
+
+.prelabel, .form-control{
+    margin-left: 40px !important;
+}
+
+#pro5-confirm, #pro5-pass{
+    margin-left: 10px;
+    margin: 10px;
+    margin-left: 100px;
+    padding: 20px;
+}
+#pro5-email, #pro5-name {
+    margin: 10px;
+    margin-right: 50px;
+    
+}

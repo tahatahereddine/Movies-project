@@ -1,5 +1,7 @@
 <?php
-    session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +12,7 @@
     <link rel="stylesheet" href="styles/style_home.css">
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/bootstrap.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -22,16 +25,45 @@
 
       <nav class="navbar">
         <a href="index.php"">Acceuil</a>
-        <a href="filtrer.php?critere=genre">Genre</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Genre</button>
+          <div class="dropdown-content">
+            <a href="filtrer.php?critere=genre&g=Action">Action</a>
+            <a href="filtrer.php?critere=genre&g=Animation">Animation</a>
+            <a href="filtrer.php?critere=genre&g=Comedy">Comedy</a>
+            <a href="filtrer.php?critere=genre&g=True+Story">Histoire Vraie</a>
+            <a href="filtrer.php?critere=genre&g=Sci-Fi">Science Fiction</a>
+            <a href="filtrer.php?critere=genre&g=Drama">Drama</a>
+
+          </div>
+        </div>
+
+
         <a href="filtrer.php?critere=top">Top IMdB</a>
-        <a href="filtrer.php?critere=genre">Pays</a>
-        <a href="filtrer.php?critere=genre">About</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Genre</button>
+          <div class="dropdown-content">
+            <a href="filtrer.php?critere=pays&pays=USA">États-Unis</a>
+            <a href="filtrer.php?critere=pays&pays=United+Kingdom">Angleterre</a>
+            <a href="filtrer.php?critere=pays&pays=France">France</a>
+            <a href="#">Maroc</a>
+            <a href="#">Link 5</a>
+            <a href="#">Link 6</a>
+          </div>
+        </div>
+
+        <a href="about.php">A propos</a>
       </nav>
+
+  
+
 
       <div class="user-options">
         <?php
           if(isset($_SESSION['id'])){
-              echo "<a href='profile.php' id='profile'>".$_SESSION['prenom']."</a>";
+              echo "<a href='profile.php' id='profile'><img width='14px' src='images/profile.png'></img>".$_SESSION['prenom']."</a>";
               echo "<a href='deconnecter.php' id='deconnecter'>Se deconnecter</a>";
           }else{
               echo "<a href='signup.php' id='sign-up'>S'enregistrer </a>";

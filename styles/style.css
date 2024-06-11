@@ -57,6 +57,7 @@ body{
     width: 100%;
 }
 
+
 #sign-up, #profile, #deconnecter {
     border: 1px solid black;
     color: rgb(251, 255, 132);
@@ -180,4 +181,55 @@ body, html {
     margin-left: 15px;
     text-decoration: none;
     color: #fff;
+}
+
+
+.dropbtn {
+    position: relative;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    background-color: rgb(251, 255, 132);
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(229, 231, 161);
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 20px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    padding-left: 0px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+#profile {
+    display: flex;
+    align-items: center;
+}
+
+#profile img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-right: 10px; /* Space between image and text */
 }

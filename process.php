@@ -7,7 +7,7 @@ if (isset($_POST['signup'])) {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $mdp = $_POST['password'];
     $date_naiss = $_POST['date_naiss'];
 
     if(!utilisateurExiste($conn, $email)){
@@ -22,8 +22,8 @@ if (isset($_POST['signup'])) {
 // Handle Sign-In
 if (isset($_POST['signin'])) {
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $mdp = $_POST['password'];
 
-    connecterUtilisateur($conn, $email, $password);
+    connecterUtilisateur($conn, $email, $mdp);
 }
 ?>
