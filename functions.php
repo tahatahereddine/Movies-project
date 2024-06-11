@@ -107,7 +107,7 @@ function afficher_section($conn, $sql, $titre){
         <div class="col-12">
         <br><br>
             <h3 class="font-weight-bold text-uppercase text-light" style="color:black !important;
-            padding-top:15px">'.$titre.'</h3>
+            padding-top:10px">'.$titre.'</h3>
         </div>
         </div>
 

@@ -43,14 +43,12 @@ if (session_status() === PHP_SESSION_NONE) {
         <a href="filtrer.php?critere=top">Top IMdB</a>
 
         <div class="dropdown">
-          <button class="dropbtn">Genre</button>
+          <button class="dropbtn">Pays</button>
           <div class="dropdown-content">
-            <a href="filtrer.php?critere=pays&pays=USA">États-Unis</a>
-            <a href="filtrer.php?critere=pays&pays=United+Kingdom">Angleterre</a>
-            <a href="filtrer.php?critere=pays&pays=France">France</a>
-            <a href="#">Maroc</a>
-            <a href="#">Link 5</a>
-            <a href="#">Link 6</a>
+            <a href="filtrer.php?critere=pays&p=USA">États-Unis</a>
+            <a href="filtrer.php?critere=pays&p=Germany">Allemend</a>
+            <a href="filtrer.php?critere=pays&p=United+Kingdom">Angleterre</a>
+            <a href="filtrer.php?critere=pays&p=France">France</a>
           </div>
         </div>
 
